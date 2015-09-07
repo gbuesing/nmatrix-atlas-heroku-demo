@@ -1,0 +1,23 @@
+<p>
+<% if defined? NMatrix::ATLAS %>
+  <b>using Atlas.</b>
+<% else %>
+  not using Atlas.
+<% end %>
+</p>
+
+<p><%= @t %></p>
+
+<p>m <%= @m.shape %></p>
+<pre><%= @m if @s < 100 %></pre>
+
+<p>v <%= @v.shape %></p>
+<pre><%= @v if @s < 100 %></pre>
+
+<p>m.dot(v) <%= @dot.shape %></p>
+<pre><%= @dot if @s < 100 %></pre>
+
+<p>svd</p>
+<% @svd.each do |nx| %>
+  <p><%= nx.shape %></p>
+<% end %>
