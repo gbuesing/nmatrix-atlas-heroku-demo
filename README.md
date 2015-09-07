@@ -7,9 +7,11 @@ Requires [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-mu
 
 ```
 heroku buildpacks:set https://github.com/ddollar/heroku-buildpack-multi.git
+```
 
-# or, when creating app:
+Or, when creating app:
 
+```
 heroku create --buildpack https://github.com/ddollar/heroku-buildpack-multi
 ```
 
@@ -26,8 +28,8 @@ Apt packages to install are declared in ```Aptfile```:
 libatlas-base-dev
 ```
 
-I deviated from [Ubuntu install instructions on the NMatrix wiki](https://github.com/SciRuby/nmatrix/wiki/Installation#ubuntudebian) because ```update-alternatives`` did not seem to work as expected on Heroku.
+I deviated from [Ubuntu install instructions on the NMatrix wiki](https://github.com/SciRuby/nmatrix/wiki/Installation#ubuntudebian) because ```update-alternatives``` did not seem to work as expected on Heroku.
 
-So instead, [I prepended Atlas lib and include paths in my fork of the Apt buildpack](https://github.com/gbuesing/heroku-buildpack-apt/commit/995e24267910ced257793bfc249d94493eb4902b).
+So instead, I prepended Atlas lib and include paths in [my fork of the Apt buildpack](https://github.com/gbuesing/heroku-buildpack-apt/commit/995e24267910ced257793bfc249d94493eb4902b).
 
 Seems to work.
